@@ -1,8 +1,9 @@
 {
   "name": "cdk-lambda-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
@@ -26,5 +27,22 @@
     "@aws-cdk/aws-sns-subscriptions": "1.27.0",
     "@aws-cdk/aws-sqs": "1.27.0",
     "@aws-cdk/core": "1.27.0"
-  }
+  },
+  "description": "## Install",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ufoo68/cdk-lambda-api.git"
+  },
+  "keywords": [
+    "cdk"
+  ],
+  "author": "ufoo68 <mitarou.yuutarou@gmail.com> (https://qiita.com/ufoo68)",
+  "bugs": {
+    "url": "https://github.com/ufoo68/cdk-lambda-api/issues"
+  },
+  "homepage": "https://github.com/ufoo68/cdk-lambda-api#readme"
 }

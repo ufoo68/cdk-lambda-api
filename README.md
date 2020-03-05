@@ -1,12 +1,26 @@
-# Welcome to your CDK TypeScript Construct Library project!
+# This is simple library for Lambda integration on [AWS CDK](https://aws.amazon.com/cdk/)
 
-You should explore the contents of this project. It demonstrates a CDK Construct Library that includes a construct (`LambdaApi`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+## Install
 
-The construct defines an interface (`LambdaApiProps`) to configure the visibility timeout of the queue.
+- Using npm
 
-## Useful commands
+```bash
+npm i -s cdk-lambda-api
+```
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
+- Using yarn
+
+```bash
+yarn add cdk-lambda-api
+```
+
+## Usage
+
+Following is simple usage of library. The lambda file name must be `index.ts`
+
+```typescript
+// specify directory path on `lambdaPath`
+new LambdaApi(this, 'LambdaApi', { lambdaPath: 'lambda' })
+// If you use environment variable, `environment` props is encvironment variables
+new LambdaApi(this, 'LambdaApi', { lambdaPath: 'lambda', environment: { key: value } })
+```
