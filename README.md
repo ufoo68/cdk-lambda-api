@@ -1,5 +1,10 @@
 # This is simple library for Lambda integration on [AWS CDK](https://aws.amazon.com/cdk/)
 
+This cdk library include two resouces
+
+- [Lambda](https://aws.amazon.com/lambda/)
+- [API Gateway](https://aws.amazon.com/api-gateway/)
+
 ## Install
 
 - Using npm
