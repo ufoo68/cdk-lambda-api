@@ -1,9 +1,9 @@
 name: cdk
- 
+
 on:
   push:
     branches:
-      - masterr
+      - master
 jobs:
   aws_cdk:
     runs-on: ubuntu-18.04
