@@ -1,32 +1,30 @@
-import * as sns from '@aws-cdk/aws-sns';
-import * as subs from '@aws-cdk/aws-sns-subscriptions';
-import * as sqs from '@aws-cdk/aws-sqs';
-import * as cdk from '@aws-cdk/core';
+import * as lambda from '@aws-cdk/aws-lambda'
+import * as apigateway from '@aws-cdk/aws-apigateway'
+import * as cdk from '@aws-cdk/core'
 
-export interface CdkLambdaApiProps {
-  /**
-   * The visibility timeout to be configured on the SQS Queue, in seconds.
-   *
-   * @default Duration.seconds(300)
-   */
-  visibilityTimeout?: cdk.Duration;
+export interface LambdaApiProps {
+  environment?: { [key: string]: string }
+  lambdaPath: string
 }
 
-export class CdkLambdaApi extends cdk.Construct {
-  /** @returns the ARN of the SQS queue */
-  public readonly queueArn: string;
+export class LambdaApi extends cdk.Construct {
+  /** @returns the Class of the lambda Function */
+  public readonly handler: lambda.Function
+  /** @returns the Class of the Rest Api */
+  public readonly api: apigateway.LambdaRestApi
 
-  constructor(scope: cdk.Construct, id: string, props: CdkLambdaApiProps = {}) {
-    super(scope, id);
+  constructor(scope: cdk.Construct, id: string, { environment, lambdaPath }: LambdaApiProps) {
+    super(scope, id)
 
-    const queue = new sqs.Queue(this, 'CdkLambdaApiQueue', {
-      visibilityTimeout: props.visibilityTimeout || cdk.Duration.seconds(300)
-    });
+    this.handler = new lambda.Function(this, `${id}Handler`, {
+      runtime: lambda.Runtime.NODEJS_12_X,
+      code: lambda.Code.asset(lambdaPath),
+      handler: 'index.handler',
+      environment
+    })
 
-    const topic = new sns.Topic(this, 'CdkLambdaApiTopic');
-
-    topic.addSubscription(new subs.SqsSubscription(queue));
-
-    this.queueArn = queue.queueArn;
+    this.api = new apigateway.LambdaRestApi(this, `${id}Endpoint`, {
+      handler: this.handler
+    })
   }
 }
