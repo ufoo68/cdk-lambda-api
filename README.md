@@ -1,5 +1,8 @@
 # This is simple library for Lambda integration on [AWS CDK](https://aws.amazon.com/cdk/)
 
+[![GitHub Actions status](https://github.com/ufoo68/cdk-lambda-api/workflows/cdk/badge.svg)](https://github.com/ufoo68/cdk-lambda-api/actions)
+[![npm version](https://badge.fury.io/js/cdk-lambda-api.svg)](https://badge.fury.io/js/cdk-lambda-api)
+
 This cdk library include two resouces
 
 - [Lambda](https://aws.amazon.com/lambda/)
