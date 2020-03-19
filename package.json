@@ -18,12 +18,12 @@
     "typescript": "~3.7.2"
   },
   "peerDependencies": {
-    "@aws-cdk/core": "1.27.0"
+    "@aws-cdk/core": "1.30.0"
   },
   "dependencies": {
     "@aws-cdk/aws-apigateway": "^1.27.0",
     "@aws-cdk/aws-lambda": "^1.27.0",
-    "@aws-cdk/core": "1.27.0"
+    "@aws-cdk/core": "1.30.0"
   },
   "description": "## Install",
   "directories": {
