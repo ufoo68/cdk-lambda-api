@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.32.2",
+    "@aws-cdk/assert": "1.36.1",
     "@types/jest": "25.2.1",
     "@types/node": "10.17.5",
     "jest": "25.5.3",
@@ -18,12 +18,12 @@
     "typescript": "3.8.3"
   },
   "peerDependencies": {
-    "@aws-cdk/core": "1.32.2"
+    "@aws-cdk/core": "1.36.1"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigateway": "1.32.2",
-    "@aws-cdk/aws-lambda": "1.32.2",
-    "@aws-cdk/core": "1.32.2"
+    "@aws-cdk/aws-apigateway": "1.36.1",
+    "@aws-cdk/aws-lambda": "1.36.1",
+    "@aws-cdk/core": "1.36.1"
   },
   "description": "## Install",
   "directories": {
