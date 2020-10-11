@@ -1,6 +1,6 @@
 {
   "name": "cdk-lambda-api",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.66.0",
+    "@aws-cdk/assert": "1.67.0",
     "@types/jest": "26.0.14",
     "@types/node": "14.11.2",
     "jest": "26.4.2",
@@ -18,9 +18,9 @@
     "typescript": "4.0.3"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigateway": "1.66.0",
-    "@aws-cdk/aws-lambda": "1.66.0",
-    "@aws-cdk/core": "1.66.0"
+    "@aws-cdk/aws-apigateway": "1.67.0",
+    "@aws-cdk/aws-lambda": "1.67.0",
+    "@aws-cdk/core": "1.67.0"
   },
   "description": "## Install",
   "directories": {

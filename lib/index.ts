@@ -4,6 +4,7 @@ import * as cdk from '@aws-cdk/core'
 
 export interface LambdaApiProps {
   environment?: { [key: string]: string }
+  layer?: lambda.ILayerVersion
   lambdaPath: string
 }
 
@@ -13,12 +14,13 @@ export class LambdaApi extends cdk.Construct {
   /** @returns the Class of the Rest Api */
   public readonly api: apigateway.LambdaRestApi
 
-  constructor(scope: cdk.Construct, id: string, { environment, lambdaPath }: LambdaApiProps) {
+  constructor(scope: cdk.Construct, id: string, { environment, lambdaPath, layer }: LambdaApiProps) {
     super(scope, id)
 
     this.handler = new lambda.Function(this, `${id}Handler`, {
       runtime: lambda.Runtime.NODEJS_12_X,
-      code: lambda.Code.asset(lambdaPath),
+      code: lambda.Code.fromAsset(lambdaPath),
+      layers: layer ? [layer] : undefined,
       handler: 'index.handler',
       environment
     })
